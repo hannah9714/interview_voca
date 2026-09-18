@@ -14,7 +14,10 @@ function App() {
   const [showMeaning, setShowMeaning] = useState({});
   const [learned, setLearned] = useState({});
 
-  const allDays = useMemo(() => chapters.flatMap((chapter) => chapter.days), []);
+  const allDays = useMemo(
+    () => chapters.flatMap((chapter) => chapter.days),
+    [],
+  );
 
   const allWords = useMemo(
     () =>
@@ -24,9 +27,9 @@ function App() {
           day: day.day,
           index,
           key: `${day.day}-${index}`,
-        }))
+        })),
       ),
-    [allDays]
+    [allDays],
   );
 
   const learnedWords = allWords.filter((item) => learned[item.key]);

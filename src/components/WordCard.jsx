@@ -20,7 +20,9 @@ const Word = styled.div`
   letter-spacing: -0.035em;
 `;
 
-const MeaningArea = styled.div`margin-top: 20px;`;
+const MeaningArea = styled.div`
+  margin-top: 20px;
+`;
 
 const Meaning = styled.div`
   min-height: 28px;
@@ -34,7 +36,11 @@ const HiddenMeaning = styled.div`
   height: 22px;
   border-radius: 4px;
   background: repeating-linear-gradient(
-    -45deg, #ebe4d9, #ebe4d9 4px, #e3dbcf 4px, #e3dbcf 8px
+    -45deg,
+    #ebe4d9,
+    #ebe4d9 4px,
+    #e3dbcf 4px,
+    #e3dbcf 8px
   );
 `;
 
@@ -73,11 +79,18 @@ const ActionButton = styled.button`
   font-weight: 850;
   cursor: pointer;
 
-  &:active { transform: scale(0.98); }
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export default function WordCard({
-  item, index, isMeaningVisible, isLearned, onToggleMeaning, onToggleLearned,
+  item,
+  index,
+  isMeaningVisible,
+  isLearned,
+  onToggleMeaning,
+  onToggleLearned,
 }) {
   return (
     <Card>
@@ -85,7 +98,8 @@ export default function WordCard({
       <Word>{item.word}</Word>
 
       <MeaningArea>
-        <Meaning>{isMeaningVisible ? item.meaning : <HiddenMeaning />}</Meaning>
+        {/* <Meaning>{isMeaningVisible ? item.meaning : <HiddenMeaning />}</Meaning> */}
+        <Meaning>{item.meaning}</Meaning>
         <Phrase>{item.phrase}</Phrase>
         <Example>{item.example}</Example>
       </MeaningArea>

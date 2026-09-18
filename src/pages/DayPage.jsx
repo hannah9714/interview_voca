@@ -5,28 +5,49 @@ import WordCard from "../components/WordCard";
 import { Page, TopBar, BackButton, Progress } from "../styles/layout";
 
 const Header = styled.div`
-  padding-bottom:19px; border-bottom:3px solid #153865;
+  padding-bottom: 19px;
+  border-bottom: 3px solid #153865;
 `;
 const Number = styled.div`
-  color:#ff6437; font-size:10px; font-weight:900; letter-spacing:.14em;
+  color: #ff6437;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
 `;
 const Heading = styled.h1`
-  margin:6px 0 0; color:#153865; font-size:29px; line-height:1.25; letter-spacing:-.045em;
+  margin: 6px 0 0;
+  color: #153865;
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
 `;
 const Amount = styled.div`
-  margin-top:8px; color:#9b9287; font-size:10px; font-weight:800;
+  margin-top: 8px;
+  color: #9b9287;
+  font-size: 10px;
+  font-weight: 800;
 `;
 
 export default function DayPage({
-  selectedDay, learned, showMeaning, learnedCount, totalWords,
-  progressPercent, toggleMeaning, toggleLearned, goContents, setScreen,
+  selectedDay,
+  learned,
+  showMeaning,
+  learnedCount,
+  totalWords,
+  progressPercent,
+  toggleMeaning,
+  toggleLearned,
+  goContents,
+  setScreen,
 }) {
   return (
     <>
       <Page>
         <TopBar>
           <BackButton onClick={goContents}>← CONTENTS</BackButton>
-          <Progress>{learnedCount} / {totalWords} LEARNED</Progress>
+          <Progress>
+            {learnedCount} / {totalWords} LEARNED
+          </Progress>
         </TopBar>
         <ProgressBar percent={progressPercent} />
 
